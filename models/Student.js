@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const StudentSchema = new Schema({
     name: { type: String, required: true },        
     lastname: { type: String, required: true },
-    tc_no: { type: String, required: true, unique: true }, 
+    tc_number: { type: String, required: true, unique: true }, 
     date_of_birth: { type: Date, required: true }   
 });
 
