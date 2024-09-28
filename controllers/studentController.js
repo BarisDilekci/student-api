@@ -1,4 +1,4 @@
-const Student = require('../models/Student.js'); // Modeli require ile içe aktar
+const Student = require('../models/Student.js'); 
 
 const addStudent = async (req, res) => {
     const { name, lastname, tc_number, date_of_birth } = req.body;
@@ -56,4 +56,28 @@ const deleteStudentByTcNumber = async (req, res) => {
     }
 };
 
-module.exports = { addStudent, getAllStudents, deleteStudentByTcNumber }; 
+const updateStudentByTcNumber = async (req, res) => {
+    const { tc_number } = req.params;
+    const { name, lastname, date_of_birth } = req.body;
+
+    try {
+   
+        const updatedStudent = await Student.findOneAndUpdate(
+            { tc_number },
+            { $set: { name, lastname, date_of_birth } }, 
+            { new: true }
+        );
+
+        if (!updatedStudent) {
+            return res.status(404).json({ message: 'Öğrenci bulunamadı.' });
+        }
+
+        res.status(200).json({ message: 'Öğrenci başarıyla güncellendi.', student: updatedStudent });
+    } catch (error) {
+        console.error('Error updating student:', error.message); 
+        res.status(500).json({ message: 'Veri güncellenirken bir hata oluştu.' });
+    }
+};
+
+
+module.exports = { addStudent, getAllStudents, deleteStudentByTcNumber, updateStudentByTcNumber }; 
