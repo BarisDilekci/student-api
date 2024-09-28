@@ -2,19 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const StudentSchema = new Schema({
-    name: { type: String, required: true },        
+    name: { type: String, required: true },
     lastname: { type: String, required: true },
-    tc_number: { 
-        type: Number, 
-        required: true, 
-        unique: true, 
+    tc_number: {
+        type: Number,
+        required: true,
+        unique: true,
         validate: {
-            validator: Number.isInteger, 
+            validator: Number.isInteger,
             message: '{VALUE} geçerli bir tam sayı değil!'
         }
-    }, 
-    date_of_birth: { type: Date, required: true }   
+    },
+    date_of_birth: { type: String, required: true } // String olarak değiştirin
 });
+
 
 const Student = mongoose.model('Student', StudentSchema);
 
