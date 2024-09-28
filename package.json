@@ -12,6 +12,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "express": "^4.21.0",
+    "mongoose": "^8.7.0",
     "nodemon": "^3.1.7"
   }
 }
