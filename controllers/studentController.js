@@ -39,4 +39,21 @@ const getAllStudents = async (req, res) => {
     }
 };
 
-module.exports = { addStudent, getAllStudents }; 
+const deleteStudentByTcNumber = async (req, res) => {
+    const { tc_number } = req.params; 
+
+    try {
+        const student = await Student.findOneAndDelete({ tc_number });
+
+
+        if (!student) {
+            return res.status(404).json({ message: 'Öğrenci bulunamadı.' });
+        }
+
+        res.status(200).json({ message: 'Öğrenci başarıyla silindi.' });
+    } catch (error) {
+        res.status(500).json({ message: 'Veri silinirken bir hata oluştu.', error: error.message });
+    }
+};
+
+module.exports = { addStudent, getAllStudents, deleteStudentByTcNumber }; 
