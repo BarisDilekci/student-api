@@ -86,7 +86,7 @@ Thank you.
 ## Path
 ```bash
 Get all student : http://localhost:3000/students/getAllStudent
-Add student : http://localhost:3000/students/addStudent
-Delete student : http://localhost:3000/students/deleteStudent/1234567890
-Update student : http://localhost:3000/students/updateStudent/12345678901
+Add student     : http://localhost:3000/students/addStudent
+Delete student  : http://localhost:3000/students/deleteStudent/1234567890
+Update student  : http://localhost:3000/students/updateStudent/12345678901
  ```
