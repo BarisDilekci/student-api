@@ -13,7 +13,7 @@ const StudentSchema = new Schema({
             message: '{VALUE} geçerli bir tam sayı değil!'
         }
     },
-    date_of_birth: { type: String, required: true } // String olarak değiştirin
+    date_of_birth: { type: String, required: true } 
 });
 
 
