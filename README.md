@@ -14,7 +14,6 @@ Thank you.
 
 ## Steps 1 to Run the Project
 
-1. In the project's root directory, initialize a `package.json` file by running the following command:
 1. Clone Github Repo:
 
    ```bash
@@ -43,7 +42,6 @@ Thank you.
 
 ## Steps 2 to Run the Project
 
-1. In the project's root directory, initialize a `package.json` file by running the following command:
 1. Clone Github Repo:
 
    ```bash
